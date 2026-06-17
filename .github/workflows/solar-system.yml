@@ -9,11 +9,12 @@ on:
     
 jobs:
     unit-testing:
-      strategy:
-        matrix:
-          node_js-version: [18]
-          operating_system: [ubuntu-latest, macos-latest]
-      runs-on: ${{matrix.operating_system}}
+      # strategy:
+      #   matrix:
+      #     node_js-version: [18]
+      #     operating_system: [ubuntu-latest, macos-latest]
+      runs-on: ubuntu-latest
+      
       steps:
         - name: Checkout Repository
           uses: actions/checkout@v4
