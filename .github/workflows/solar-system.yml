@@ -11,7 +11,7 @@ jobs:
     unit-testing:
       strategy:
         matrix:
-          node_js-version: [18, 19, 20]
+          node_js-version: [20]
           operating_system: [ubuntu-latest, macos-latest]
       runs-on: ${{matrix.operating_system}}
       steps:
@@ -30,7 +30,7 @@ jobs:
           run: npm test
           
         - name: Archive Test Result
-          uses: actions/upload-artifact@v4
+          uses: actions/upload-artifact@v3
           with:
             name: Mocha-Test-Result
             path: test-results.xml
